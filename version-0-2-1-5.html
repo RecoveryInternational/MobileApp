@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>RI Test</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;" />
+<link type="text/css" href="css/master.css" rel="stylesheet" />
+<style>
+#left{
+    float:left;
+    /*width:98%;*/
+    overflow:hidden;
+}
+#right{
+    overflow:hidden;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+    //alert("welcome");
+    //installToHomescreen();
+    my_width = Math.max(
+        document.documentElement["clientWidth"],
+        document.body["scrollWidth"],
+        document.documentElement["scrollWidth"],
+        document.body["offsetWidth"],
+        document.documentElement["offsetWidth"]
+    );
+
+function getWidth()
+  {
+    xWidth = null;
+    if(window.screen != null)
+      xWidth = window.screen.availWidth;
+
+    if(window.innerWidth != null)
+      xWidth = window.innerWidth;
+
+    if(document.body != null)
+      xWidth = document.body.clientWidth;
+
+    return xWidth;
+  }
+function getHeight() {
+  xHeight = null;
+  if(window.screen != null)
+    xHeight = window.screen.availHeight;
+
+  if(window.innerHeight != null)
+    xHeight =   window.innerHeight;
+
+  if(document.body != null)
+    xHeight = document.body.clientHeight;
+
+  return xHeight;
+}
+
+    //document.getElementById("left").style.width = my_width + "px";
+    alert(my_width);
+    //alert(getWidth());
+    //setTimeout(alert(screen.width), 300);
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="left">Left side div</div>
+<div id="right">Right side div</div>
+</div>
+<p>test</p>
+</div>
+</body>
+</html>
