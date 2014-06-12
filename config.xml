@@ -14,28 +14,6 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
-    <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="7" />
-    <preference name="android-installLocation" value="auto" />
     <icon src="favicon.png" />
-    <icon gap:density="ldpi" gap:platform="android" src="favicon.png" />
-    <icon gap:density="mdpi" gap:platform="android" src="favicon.png" />
-    <icon gap:density="hdpi" gap:platform="android" src="favicon.png" />
-    <icon gap:density="xhdpi" gap:platform="android" src="favicon.png" />
-    <icon gap:platform="blackberry" src="favicon.png" />
-    <icon gap:platform="blackberry" gap:state="hover" src="favicon.png" />
-    <icon gap:platform="ios" height="57" src="favicon.png" width="57" />
-    <icon gap:platform="ios" height="72" src="favicon.png" width="72" />
-    <icon gap:platform="ios" height="114" src="favicon.png" width="114" />
-    <icon gap:platform="ios" height="144" src="favicon.png" width="144" />
-    <icon gap:platform="webos" src="favicon.png" />
-    <icon gap:platform="winphone" src="favicon.png" />
-    <icon gap:platform="winphone" gap:role="background" src="favicon.png" />
     <access origin="http://127.0.0.1*" />
 </widget>
