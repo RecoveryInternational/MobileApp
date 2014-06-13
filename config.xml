@@ -15,5 +15,5 @@
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
     <icon src="favicon.png" />
-    <access origin="http://127.0.0.1*" />
+    <access origin="*" />
 </widget>
