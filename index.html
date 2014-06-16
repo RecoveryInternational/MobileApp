@@ -160,6 +160,7 @@ function installToHomescreen() {
     <h1><a href="javascript:phoneMeetings();">Phone Meetings</a></h1>
     <h1><a href="javascript:onlineMeetings();">Online Meetings</a></h1>
     <h1><a href="javascript:contactUs();">Contact Us</a></h1>
+    <h1><a href="javascript:disclaimer();">Disclaimer</a></h1>
     <hr />
     <h1>Website Links</h1>
     <h1><a href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></h1>
@@ -387,6 +388,10 @@ Java Now</a>
         <p>App Developer</p>
         <p><a href="mailto:recovery@blazingraptor.com">recovery@blazingraptor.com</a></p>
     </div>
+    <div id="disclaimer" style="display: none;">
+        <h1>Disclaimer</h1>
+        <p>The goal of this app is to make it easier to use the information on the Recovery International website. The links and information are being provided as a convenience and for informational purposes only; it does not constitute an endorsement or an approval by Recovery International of any of the products, services or opinions of the corporation or organization or individual. Recovery International and the developers of this App bear no responsibility for the accuracy, legality or content of this App or for that of subsequent links. Contact the external site for answers to questions regarding its content. This app is provided "as is" without warranties, conditions, representations or guaranties of any kind, either expressed, implied, statutory or otherwise, including but not limited to, any implied warranties or conditions of merchantability, quality, title, non-infringement or fitness for a particular purpose. We cannot be held responsible if using this App causes damage to your device or for you to be abducted by aliens after use. Ok, I'm joking about the abducted by aliens part but I am serious about everything else. While I've worked really hard to make this App really high quality still, use it at your own risk! Using the App means that you agree to these terms.</p>
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -403,6 +408,7 @@ function index() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -414,6 +420,7 @@ function toolsAndTerms() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -425,6 +432,7 @@ function exampleConstruction() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -436,6 +444,7 @@ function findAMeeting() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -447,6 +456,7 @@ function phoneMeetings() {
     document.getElementById("phone_meetings").style.display = "block";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -458,6 +468,7 @@ function onlineMeetings() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "block";
     document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
     slidePageFrom(homePage, 'right');
 }
 
@@ -469,6 +480,19 @@ function contactUs() {
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "block";
+    document.getElementById("disclaimer").style.display = "none";
+    slidePageFrom(homePage, 'right');
+}
+
+function disclaimer() {
+    document.getElementById("index").style.display = "none";
+    document.getElementById("tools_and_terms").style.display = "none";
+    document.getElementById("example_construction").style.display = "none";
+    document.getElementById("find_a_meeting").style.display = "none";
+    document.getElementById("phone_meetings").style.display = "none";
+    document.getElementById("online_meetings").style.display = "none";
+    document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "block";
     slidePageFrom(homePage, 'right');
 }
 
