@@ -44,8 +44,8 @@ p {
     padding: 0;
     margin: 0;
     width: 100%;
-    /*background-color: #2b3890;*/
-    background-color: #ffcc99;
+    background-color: #2b3890;
+    /*background-color: #ffcc99;*/
 }
 
 #navcontainer a {
@@ -55,7 +55,7 @@ p {
     display: block;
     padding: 10px;
     text-decoration: none;
-    border-bottom: solid 2px #000;
+    border-bottom: solid 1px #000;
 }
 
 form {
@@ -438,8 +438,6 @@ function resetMenuColor() {
 function index() {
     document.getElementById("index").style.display = "block";
     document.getElementById("tools_and_terms").style.display = "none";
-    resetMenuColor();
-    document.getElementById("menu_index").style.backgroundColor = "#fff";
     document.getElementById("example_construction").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
@@ -452,8 +450,6 @@ function index() {
 function toolsAndTerms() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "block";
-    resetMenuColor();
-    document.getElementById("menu_tools_and_terms").style.backgroundColor = "#fff";
     document.getElementById("example_construction").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
