@@ -430,9 +430,16 @@ page1 = document.getElementById("p1"),
 page0 = document.getElementById("p0"),
 currentPage = homePage;
 
+function resetMenuColor() {
+    document.getElementById("menu_index").style.backgroundColor = "ffcc99";
+    document.getElementById("menu_tools_and_terms").style.backgroundColor = "#ffcc99";
+}
+
 function index() {
     document.getElementById("index").style.display = "block";
     document.getElementById("tools_and_terms").style.display = "none";
+    resetMenuColor();
+    document.getElementById("menu_index").style.backgroundColor = "#fff";
     document.getElementById("example_construction").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
@@ -445,6 +452,7 @@ function index() {
 function toolsAndTerms() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "block";
+    resetMenuColor();    document.getElementById("menu_index").style.backgroundColor = "#fff";
     document.getElementById("example_construction").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
