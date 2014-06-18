@@ -151,23 +151,29 @@ function installToHomescreen() {
 <body>
 
 <div id="p0" class="page left" style="background-color: #fff;">
-    <h1>Menu (many links, scroll down)</h1>
-    <h1><a href="javascript:slidePageFrom(homePage, 'right');">Back</a></h1>
-    <h1><a href="javascript:index();">Home</a></h1>
-    <h1><a href="javascript:toolsAndTerms();">Tools and Terms</a></h1>
-    <h1><a href="javascript:exampleConstruction();">Example Construction</a></h1>
-    <h1><a href="javascript:findAMeeting();">Find a Meeting</a></h1>
-    <h1><a href="javascript:phoneMeetings();">Phone Meetings</a></h1>
-    <h1><a href="javascript:onlineMeetings();">Online Meetings</a></h1>
-    <h1><a href="javascript:contactUs();">Contact Us</a></h1>
-    <h1><a href="javascript:disclaimer();">Disclaimer</a></h1>
-    <hr />
+   <h1>Menu (many items, scroll down)</h1>
+    <div id="navcontainer">
+    <ul>
+    <li><a href="javascript:slidePageFrom(homePage, 'right');">Back</a></li>
+    <li><a href="javascript:index();">Home</a></li>
+    <li><a href="javascript:toolsAndTerms();">Tools and Terms</a></li>
+    <li><a href="javascript:exampleConstruction();">Example Construction</a></li>
+    <li><a href="javascript:findAMeeting();">Find a Meeting</a></li>
+    <li><a href="javascript:phoneMeetings();">Phone Meetings</a></li>
+    <li><a href="javascript:onlineMeetings();">Online Meetings</a></li>
+    <li><a href="javascript:contactUs();">Contact Us</a></li>
+    <li><a href="javascript:disclaimer();">Disclaimer</a></li>
+    </ul>
+    </div>
     <h1>Website Links</h1>
-    <h1><a href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></h1>
-    <h1><a href="http://www.lowselfhelpsystems.org/about/shop-online.asp">Buy Books and Resources</a></h1>
-    <!--<h1><a href="#" onclick="navigator.app.loadUrl('http://www.lowselfhelpsystems.org/about/shop-online.asp', { openExternal:true });">Buy Books and Resources</a></h1>-->
-    <h1><a href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></h1>
-    <h1><a href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></h1>
+    <div id="navcontainer">
+    <ul>
+    <li><a href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></li>
+    <li><a href="https://www.lowselfhelpsystems.org/about/shop-online.asp" target="_blank">Buy Books and Resources</a></li>
+    <li><a href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></li>
+    <li><a href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></li>
+    </ul>
+    </div>
 </div>
 
 <div id="homePage" class="page center">
