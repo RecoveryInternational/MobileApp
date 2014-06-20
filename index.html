@@ -235,7 +235,7 @@ function installToHomescreen() {
 <div id="homePage" class="page center">
     <div style="position: absolute; width: 100%;">
         <div style="display: inline;">
-            <a href="javascript:slidePageFrom(page0, 'left');"><img src="images/menu.png" class="menu_btn"></a>
+            <a href="javascript:slidePageFromHome();"><img src="images/menu.png" class="menu_btn"></a>
         </div>
         <div style="display: inline;">
             <img src="images/logo.png" class="logo">
@@ -457,6 +457,7 @@ var homePage = document.getElementById("homePage"),
 page1 = document.getElementById("p1"),
 page0 = document.getElementById("p0"),
 currentPage = homePage;
+var stop_menu_bug = "right";
 
 function resetMenuColor() {
     document.getElementById("menu_index").style.backgroundColor = "ffcc99";
@@ -557,6 +558,16 @@ function disclaimer() {
     document.getElementById("contact_us").style.display = "none";
     document.getElementById("disclaimer").style.display = "block";
     slidePageFrom(homePage, 'right');
+}
+
+function slidePageFromHome() {
+    if (stop_menu_bug == "right") {
+        slidePageFrom(page0, 'left');
+	} else {
+        alert("This is a known bug. Let the App slide left and right, don't try to slide left and right yourself. Applying temporary workaround fix.");
+        //window.location.href = "index.html";
+		slidePageFrom(homePage, 'right');
+	}
 }
 
 function slidePageFrom(page, from) {
