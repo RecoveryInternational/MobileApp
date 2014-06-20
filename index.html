@@ -577,6 +577,7 @@ function slidePageFrom(page, from) {
     page.className ="page transition center";
     currentPage.className = "page transition " + (from === "left" ? "right" : "left");
     currentPage = page;
+    stop_mneu_bug = from;
 }
 
 function installToHomescreen() {
