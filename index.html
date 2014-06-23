@@ -165,6 +165,13 @@ window.onload = function() {
     installToHomescreen();
 }
 
+function iBug() {
+  var cols = document.getElementsByClassName("menupic");
+  for(i=0; i<cols.length; i++) {
+    cols[i].style.display = "none";
+  }
+}
+
 function installToHomescreen() {
     if (navigator.userAgent.indexOf("Android") != -1) {
         if (navigator.userAgent.indexOf("Chrome") != -1) {
@@ -181,11 +188,11 @@ function installToHomescreen() {
             //alert("Hello Android Stock Browser");
             document.getElementById("install_to_homescreen").innerHTML = "Add to homescreen instructions: Tap on the menu button (three squares) and select &quot\;Add shortcut&quot\;.";
         }
-    } else if (navigator.userAgent.indexOf("iPhone") != -1) {fun
-        document.getElementById("install_to_homescreen").innerHTML =
-"Add to home screen instructions: Tap <img src=\"images/apple-share-2x.png\" width=\"10\" height=\"14\" />, then tap &quot;Add to Home Screen&quot\;.";
+    } else if (navigator.userAgent.indexOf("iPhone") != -1) {
+        document.getElementById("install_to_homescreen").innerHTML = "Add to home screen instructions: Tap <img src=\"images/apple-share-2x.png\" width=\"10\" height=\"14\" />, then tap &quot;Add to Home Screen&quot\;.";
+        iBug();
     } else if (navigator.userAgent.indexOf("iPad") != -1) {
-        
+        iBug();
     } else {
 
     }
@@ -208,7 +215,7 @@ function installToHomescreen() {
 <body>
 
 <div id="p0" class="page left" style="background-color: #fff;">
-   <h1>Menu (many items, scroll down)</h1>
+    <h1>Menu (many items, scroll down)</h1>
     <div id="navcontainer">
     <ul>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#8630;</div><a href="javascript:slidePageFrom(homePage, 'right');">Back</a></li>
