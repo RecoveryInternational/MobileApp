@@ -14,6 +14,10 @@
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
+    <icon src="icons/ios/classic.png" gap:platform="ios" width="57" height="57" />
+    <icon src="icons/ios/ipad.png" gap:platform="ios" width="72" height="72" />
+    <icon src="icons/ios/retina.png" gap:platform="ios" width="114" height="114" />
+    <icon src="icons/ios/retina_ipad.png" gap:platform="ios" width="144" height="144" />
     <icon src="favicon.png" />
     <access origin="http://127.0.0.1*" />
     <access origin="*" />
