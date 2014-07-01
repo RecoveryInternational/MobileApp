@@ -34,6 +34,7 @@ p {
 #p0 {
     overflow: scroll;
     height: 100%;
+    /*opacity: 0.9;*/
 }
 
 #homePage {
@@ -464,7 +465,7 @@ Java Now</a>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#9986;</div><a href="javascript:exampleConstruction();">Example Construction</a></li>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#9733;</div><a href="javascript:findAMeeting();">Find a Meeting</a></li>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#9742;</div><a href="javascript:phoneMeetings();">Phone Meetings</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#8644</div><a href="javascript:onlineMeetings();">Online Meetings</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#8644;</div><a href="javascript:onlineMeetings();">Online Meetings</a></li>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#9993;</div><a href="javascript:contactUs();">Contact Us</a></li>
     <li><div class="arrow">&#9658;</div><div class="menupic">&#8623;</div><a href="javascript:disclaimer();">Disclaimer</a></li>
     </ul>
@@ -485,7 +486,6 @@ var homePage = document.getElementById("homePage"),
 page1 = document.getElementById("p1"),
 page0 = document.getElementById("p0"),
 currentPage = homePage;
-var stop_menu_bug = "right";
 
 function index() {
     document.getElementById("index").style.display = "block";
