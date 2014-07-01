@@ -234,36 +234,10 @@ function riEmailProtectorReturn(ratsign, rdomain, rdotcom, rname) {
 </head>
 <body>
 
-<div id="p0" class="page left" style="background-color: #fff;">
-    <h1>Menu (many items, scroll down)</h1>
-    <div class="navcontainer">
-    <ul>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#8630;</div><a href="javascript:slidePageFrom(homePage, 'right');">Back</a></li>
-    <li><div class="arrow">&#9658</div><div class="menupic">&#9635;</div><a href="javascript:index();">Home</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#8670;</div><a href="javascript:toolsAndTerms();">Tools and Terms</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#9986;</div><a href="javascript:exampleConstruction();">Example Construction</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#9733;</div><a href="javascript:findAMeeting();">Find a Meeting</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#9742;</div><a href="javascript:phoneMeetings();">Phone Meetings</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#8644</div><a href="javascript:onlineMeetings();">Online Meetings</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#9993;</div><a href="javascript:contactUs();">Contact Us</a></li>
-    <li><div class="arrow">&#9658;</div><div class="menupic">&#8623;</div><a href="javascript:disclaimer();">Disclaimer</a></li>
-    </ul>
-    </div>
-    <h1>Website Links</h1>
-    <div class="navcontainer">
-    <ul>
-    <li><div class="arrow">&#9658;</div><a href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></li>
-    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/shop-online.asp" target="_blank">Buy Books and Resources</a></li>
-    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></li>
-    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></li>
-    </ul>
-    </div>
-</div>
-
 <div id="homePage" class="page center">
     <div style="position: absolute; width: 100%;">
         <div style="display: inline;">
-            <a href="javascript:slidePageFromHome();"><img src="images/menu.png" class="menu_btn"></a>
+            <a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/menu.png" class="menu_btn"></a>
         </div>
         <div style="display: inline;">
             <img src="images/logo.png" class="logo">
@@ -480,6 +454,32 @@ Java Now</a>
     </div>
 </div>
 
+<div id="p0" class="page left" style="background-color: #fff;">
+    <h1>Menu (many items, scroll down)</h1>
+    <div class="navcontainer">
+    <ul>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#8630;</div><a href="javascript:slidePageFrom(homePage, 'right');">Back</a></li>
+    <li><div class="arrow">&#9658</div><div class="menupic">&#9635;</div><a href="javascript:index();">Home</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#8670;</div><a href="javascript:toolsAndTerms();">Tools and Terms</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#9986;</div><a href="javascript:exampleConstruction();">Example Construction</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#9733;</div><a href="javascript:findAMeeting();">Find a Meeting</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#9742;</div><a href="javascript:phoneMeetings();">Phone Meetings</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#8644</div><a href="javascript:onlineMeetings();">Online Meetings</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#9993;</div><a href="javascript:contactUs();">Contact Us</a></li>
+    <li><div class="arrow">&#9658;</div><div class="menupic">&#8623;</div><a href="javascript:disclaimer();">Disclaimer</a></li>
+    </ul>
+    </div>
+    <h1>Website Links</h1>
+    <div class="navcontainer">
+    <ul>
+    <li><div class="arrow">&#9658;</div><a href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></li>
+    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/shop-online.asp" target="_blank">Buy Books and Resources</a></li>
+    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></li>
+    <li><div class="arrow">&#9658;</div><a href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></li>
+    </ul>
+    </div>
+</div>
+
 <script type="text/javascript">
 var homePage = document.getElementById("homePage"),
 page1 = document.getElementById("p1"),
@@ -583,28 +583,15 @@ function disclaimer() {
     slidePageFrom(homePage, 'right');
 }
 
-function slidePageFromHome() {
-    if (stop_menu_bug == "right") {
-        slidePageFrom(page0, 'left');
-    } else {
-        alert("This is a known bug. Let the App slide left and right, don't try to slide left and right yourself. Applying temporary workaround fix.");
-        //window.location.href = "index.html";
-        slidePageFrom(homePage, 'right');
-    }
-}
-
-function slidePageFromBack() {
-    slidePageFrom(homePage, 'right');
+function slidePageFromHome(page, from) {
+    page.className ="page transition center"; // Move new page
+    currentPage = page;
 }
 
 function slidePageFrom(page, from) {
-    // Position the page at the starting position of the animation
-    page.className = "page " + from;
-    // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
-    page.className ="page transition center";
-    currentPage.className = "page transition " + (from === "left" ? "right" : "left");
+    //page.className ="page transition center"; // Move new page redraw fix
+    currentPage.className = "page transition " + (from === "left" ? "right" : "left"); // Move current page
     currentPage = page;
-    stop_menu_bug = from;
 }
 </script>
 
