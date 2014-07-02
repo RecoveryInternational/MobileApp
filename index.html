@@ -223,7 +223,6 @@ function riEmailProtectorReturn(ratsign, rdomain, rdotcom, rname) {
 }
 
 function riFindIntlMeeting() {
-alert("hi");
     if (document.getElementById('non_us').style.display == 'block') {
         document.getElementById('non_us').style.display = 'none';
     } else {
@@ -393,7 +392,7 @@ alert("hi");
     <div id="find_a_meeting" style="display: none;">
         <h1>Find a Meeting</h1>
         <p>This feature will not work in offline mode.</p>
-        <p><a href="#" onclick="riFindIntlMeeting()h">Non-US Meetings</a></p>
+        <p><a href="#" onclick="riFindIntlMeeting();">Non-US Meetings</a></p>
         <!--<p><a href="#" onclick="document.getElementById('non_us').style.display = 'block';">Non-US Meetings</a></p>-->
         <div id="non_us" style="display: none;">
             <p>Visit Recovery International Canada at <a href="javascript:window.open('http://www.recoverycanada.org', '_system', 'location=yes');">www.recoverycanada.org</a>.</p>
