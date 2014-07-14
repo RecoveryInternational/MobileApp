@@ -13,7 +13,7 @@
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
-    <preference name="webviewbounce" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="true" />
     <icon src="icons/ios/classic.png" gap:platform="ios" width="57" height="57" />
     <icon src="icons/ios/ipad.png" gap:platform="ios" width="72" height="72" />
