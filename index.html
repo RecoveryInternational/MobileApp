@@ -178,13 +178,19 @@ li {
     /*height: 44px;*/
 }
 
+#ios_header_spacer_menu {
+    width: 100%;
+    height: 14px;
+}
+
 .ios_footer_spacer {
     width: 100%;
     height: 44px;
 }
 
 #ios_back {
-    padding-top: 29px;
+    padding-top: 14px;
+    text-align: center;
     line-height: 44px;
 }
 
@@ -298,6 +304,7 @@ function installToHomescreen() {
         document.getElementById("ios_header").style.display = "none";
         document.getElementById("ios_footer").style.display = "none";
         document.getElementById("ios_header_spacer").style.display = "none";
+        document.getElementById("ios_header_spacer_menu").style.display = "none";
         //document.getElementByClassName("ios_footer_spacer").style.display = "none";
     }
     //alert(navigator.userAgent);
@@ -566,6 +573,7 @@ Java Now</a>
 </div>
 
 <div id="p0" class="page left" style="background-color: #fff;">
+    <div id="ios_header_spacer_menu"></div>
     <h1>Menu</h1>
     <div class="navcontainer">
     <ul>
