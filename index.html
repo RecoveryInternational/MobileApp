@@ -657,7 +657,11 @@ function exampleConstruction() {
 }
 
 function findAMeeting() {
-    window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+        window.open('http://www.blazingraptor.com/recovery/meeting.php?app=ios','_blank','location=yes');
+    } else {
+        window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
+    }
     //document.getElementById("index").style.display = "none";
     //document.getElementById("tools_and_terms").style.display = "none";
     //document.getElementById("example_construction").style.display = "none";
