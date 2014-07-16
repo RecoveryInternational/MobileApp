@@ -678,7 +678,9 @@ function toolsAndTerms() {
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
     document.getElementById("disclaimer").style.display = "none";
-    slidePageFrom(homePage, 'right');
+    if (document.getElementById("ios_menu").style.display == "none") {
+        slidePageFrom(homePage, 'right');
+    }
     document.getElementById("ios_page_title").innerHTML = "Tools and Terms";
     document.getElementById("ios_back_text").innerHTML = "Tools and Terms";
 }
@@ -692,7 +694,9 @@ function exampleConstruction() {
     document.getElementById("online_meetings").style.display = "none";
     document.getElementById("contact_us").style.display = "none";
     document.getElementById("disclaimer").style.display = "none";
-    slidePageFrom(homePage, 'right');
+    if (document.getElementById("ios_menu").style.display == "none") {
+        slidePageFrom(homePage, 'right');
+    }
     document.getElementById("ios_page_title").innerHTML = "Example Construction";
     document.getElementById("ios_back_text").innerHTML = "Example Construction";
 }
