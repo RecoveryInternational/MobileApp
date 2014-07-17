@@ -316,7 +316,7 @@ function installToHomescreen() {
             document.getElementById("install_to_homescreen").innerHTML = "Add to homescreen instructions: Tap on the menu button (three squares) and select &quot\;Add shortcut&quot\;.";
         }
     }
-    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Android") != -1)) {
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
         document.getElementById("install_to_homescreen").innerHTML = "Add to home screen instructions: Tap <img src=\"images/apple-share-2x.png\" width=\"10\" height=\"14\" />, then tap &quot;Add to Home Screen&quot\;.";
         document.getElementById("menu_btn_div").style.display = "none";
         var cols = document.getElementsByClassName('navli');
@@ -715,7 +715,7 @@ function exampleConstruction() {
 }
 
 function findAMeeting() {
-//    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
         document.getElementById("logo_bg").style.display = "none";
         document.getElementById("logo_div").style.display = "none";
         document.getElementById("index").style.display = "none";
@@ -728,9 +728,9 @@ function findAMeeting() {
         document.getElementById("disclaimer").style.display = "none";
         slidePageFrom(homePage, 'right');
         //window.open('http://www.blazingraptor.com/recovery/meeting.php?app=ios','_blank','location=yes');
-//    } else {
-//        window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
-//    }
+    } else {
+        window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
+    }
     document.getElementById("ios_page_title").innerHTML = "Find a Meeting";
     document.getElementById("ios_back_text").innerHTML = "Find a Meeting";
 }
