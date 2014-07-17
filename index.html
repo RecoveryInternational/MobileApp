@@ -312,7 +312,7 @@ function installToHomescreen() {
             document.getElementById("install_to_homescreen").innerHTML = "Add to homescreen instructions: Tap on the menu button (three squares) and select &quot\;Add shortcut&quot\;.";
         }
     }
-    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Android") != -1)) {
         document.getElementById("install_to_homescreen").innerHTML = "Add to home screen instructions: Tap <img src=\"images/apple-share-2x.png\" width=\"10\" height=\"14\" />, then tap &quot;Add to Home Screen&quot\;.";
         document.getElementById("menu_btn_div").style.display = "none";
         var cols = document.getElementsByClassName('navli');
@@ -712,7 +712,7 @@ function exampleConstruction() {
 }
 
 function findAMeeting() {
-    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Android") != -1)) {
         document.getElementById("index").style.display = "none";
         document.getElementById("tools_and_terms").style.display = "none";
         document.getElementById("example_construction").style.display = "none";
