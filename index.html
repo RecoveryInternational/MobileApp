@@ -129,16 +129,13 @@ li {
     width: 10%;
 }
 
-.logo_div {
+#logo_div {
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 100%
 }
 
-.logo_bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+#logo_bg {
+    
 }
 
 #ios_header {
@@ -382,7 +379,7 @@ function riFindIntlMeeting() {
 
 <div id="homePage" class="page center">
     <div id="ios_header_spacer"></div>
-    <div style="position: absolute; width: 100%; display: none;">
+    <div id="logo_div">
         <div style="display: inline;" id="menu_btn_div">
             <a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/menu.png" class="menu_btn"></a>
         </div>
@@ -391,7 +388,7 @@ function riFindIntlMeeting() {
         </div>
     </div>
 
-    <div style="display: none;">
+    <div id="logo_bg">
         <img src="images/header-bg8.jpg" style="width: 100%;">
     </div>
     <div id="index">
@@ -657,6 +654,8 @@ page0 = document.getElementById("p0"),
 currentPage = homePage;
 
 function index() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "block";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -671,6 +670,8 @@ function index() {
 }
 
 function toolsAndTerms() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "block";
     document.getElementById("example_construction").style.display = "none";
@@ -687,6 +688,8 @@ function toolsAndTerms() {
 }
 
 function exampleConstruction() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "block";
@@ -704,6 +707,8 @@ function exampleConstruction() {
 
 function findAMeeting() {
 //    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+        document.getElementById("logo_bg").style.display = "none";
+        document.getElementById("logo_div").style.display = "none";
         document.getElementById("index").style.display = "none";
         document.getElementById("tools_and_terms").style.display = "none";
         document.getElementById("example_construction").style.display = "none";
@@ -722,6 +727,8 @@ function findAMeeting() {
 }
 
 function phoneMeetings() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -736,6 +743,8 @@ function phoneMeetings() {
 }
 
 function onlineMeetings() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -750,6 +759,8 @@ function onlineMeetings() {
 }
 
 function contactUs() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -764,6 +775,8 @@ function contactUs() {
 }
 
 function disclaimer() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
