@@ -145,7 +145,8 @@ li {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 44px;
+    height: 73px;
+    /*height: 44px;*/
     color: #007aff;
     border-bottom: solid 1px #7299a9;
     background-color: #f3f6f6;
@@ -173,7 +174,8 @@ li {
 
 #ios_header_spacer {
     width: 100%;
-    height: 44px;
+    height: 73px;
+    /*height: 44px;*/
 }
 
 .ios_footer_spacer {
@@ -182,12 +184,22 @@ li {
 }
 
 #ios_back {
+    padding-top: 29px;
     line-height: 44px;
 }
 
 #ios_back img,a {
     vertical-align: middle;
     text-decoration: none;
+}
+
+#ios_page_title {
+    padding-top: 29px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 44px;
 }
 
 .page {
@@ -344,7 +356,7 @@ function riFindIntlMeeting() {
 
         <h1>Spread the Word and Mobile App</h1>
 
-        <p>Android/Amazon users find the Mobile App on <a href="https://play.google.com/store/apps/details?id=com.blazingraptor.recovery" target="_blank">Google Play</a> and <a href="http://www.amazon.com/Brian-Corson-Recovery-International/dp/B00L4NQLSM/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1403287354&sr=1-2&keywords=Recovery+International" target="_blank">Amazon Appstore</a>. iPhone, iPad and everyone else Google "<a href="https://www.google.com/search?q=Recovery+International+Mobile+App" target="_blank">Recovery International Mobile App</a>" and add it to your homescreen. Then encourage your friends to do the same. <span id="install_to_homescreen"></p>
+        <p>Android/Amazon users find the Mobile App on <a href="javascript:window.open('https://play.google.com/store/apps/details?id=com.blazingraptor.recovery', '_system', 'location=yes');">Google Play</a> and <a href="javascript:window.open('http://www.amazon.com/Brian-Corson-Recovery-International/dp/B00L4NQLSM/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1403287354&sr=1-2&keywords=Recovery+International', '_system', 'location=yes');">Amazon Appstore</a>. iPhone and iPad users, the app will be in the App Store soon under "Recovery International". Until then, you and everyone else can use the Web App. Simply Google "<a href="javascript:window.open('https://www.google.com/search?q=Recovery+International+Mobile+App', '_system', 'location=yes');">Recovery International Mobile App</a>" and add it to your homescreen. Then encourage your friends to do the same. <span id="install_to_homescreen"></p>
         <div class="ios_footer_spacer"></div>
     </div>
     <div id="tools_and_terms" style="display: none;">
@@ -571,10 +583,10 @@ Java Now</a>
     <h1 class="navh1">Website Links</h1>
     <div class="navcontainer">
     <ul>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/shop-online.asp" target="_blank">Buy Books and Resources</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org', '_system', 'location=yes');">Desktop Website</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/shop-online.asp', '_system', 'location=yes');">Buy Books and Resources</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/support.asp', '_system', 'location=yes');">Donate Now</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/membership.asp', '_system', 'location=yes');">Become a Member</a></li>
     </ul>
     </div>
     <div class="ios_footer_spacer"></div>
@@ -584,7 +596,7 @@ Java Now</a>
     <div id="ios_back" style="display: none;">
         <a href="javascript:slidePageFromBack(homePage, 'right');"><img src="images/ios-back.png" width="24" height="21"> <span id="ios_back_text">Home</span></a>
     </div>
-    <div id="ios_page_title" style="text-align: center; color: #000; font-weight: bold; font-size: 20px; line-height: 44px;">Home</div>
+    <div id="ios_page_title">Home</div>
     </div>
 <div id="ios_footer"><div id="ios_menu" style="text-align: center;"><a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/ios-menu.png" width="43" height="40"></a></div></div>
 
