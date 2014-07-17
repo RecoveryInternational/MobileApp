@@ -531,7 +531,6 @@ function riFindIntlMeeting() {
     </div>
     <div id="find_a_meeting" style="display: none;">
         <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=true" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 100%">Your browser doesn't support iFrames.</iframe>
-        <div class="ios_footer_spacer"></div>
     </div>
     <div id="phone_meetings" style="display: none;">
         <h1>Phone Meetings</h1>
@@ -704,7 +703,7 @@ function exampleConstruction() {
 }
 
 function findAMeeting() {
-    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Android") != -1)) {
+//    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
         document.getElementById("index").style.display = "none";
         document.getElementById("tools_and_terms").style.display = "none";
         document.getElementById("example_construction").style.display = "none";
@@ -715,9 +714,9 @@ function findAMeeting() {
         document.getElementById("disclaimer").style.display = "none";
         slidePageFrom(homePage, 'right');
         //window.open('http://www.blazingraptor.com/recovery/meeting.php?app=ios','_blank','location=yes');
-    } else {
+//    } else {
         window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
-    }
+//    }
     document.getElementById("ios_page_title").innerHTML = "Find a Meeting";
     document.getElementById("ios_back_text").innerHTML = "Find a Meeting";
 }
