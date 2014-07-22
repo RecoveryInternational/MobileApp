@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<html manifest="recovery.manifest">
 <head>
 <title>Recovery International Mobile App</title>
 <!-- For iPhone 4 with high-resolution Retina display: -->
@@ -94,6 +95,13 @@ p {
     display: inline;
 }
 
+.barmenupic {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
 /*.navcontainer div.pic {
     float: left;
     width: 20px:
@@ -128,23 +136,21 @@ li {
     width: 10%;
 }
 
-.logo_div {
+#logo_div {
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 100%
 }
 
-.logo_bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+#logo_bg {
+    
 }
 
 #ios_header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 44px;
+    height: 58px;
+    /*height: 44px;*/
     color: #007aff;
     border-bottom: solid 1px #7299a9;
     background-color: #f3f6f6;
@@ -172,7 +178,13 @@ li {
 
 #ios_header_spacer {
     width: 100%;
-    height: 44px;
+    height: 58px;
+    /*height: 44px;*/
+}
+
+#ios_header_spacer_menu {
+    width: 100%;
+    height: 14px;
 }
 
 .ios_footer_spacer {
@@ -181,6 +193,7 @@ li {
 }
 
 #ios_back {
+    padding-top: 14px;
     text-align: left;
     line-height: 44px;
 }
@@ -188,6 +201,15 @@ li {
 #ios_back img,a {
     vertical-align: middle;
     text-decoration: none;
+}
+
+#ios_page_title {
+    padding-top: 14px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 44px;
 }
 
 .ios_shortcut_left {
@@ -219,6 +241,14 @@ li {
 
 #ios_menu {
 
+}
+
+#loading_screen {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
 }
 
 .page {
@@ -253,6 +283,7 @@ li {
     transition-duration: 0.25s;
 }
 </style>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript">
 window.onload = function() {
     //alert("welcome");
@@ -288,7 +319,6 @@ function installToHomescreen() {
     if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
         document.getElementById("install_to_homescreen").innerHTML = "Add to home screen instructions: Tap <img src=\"images/apple-share-2x.png\" width=\"10\" height=\"14\" />, then tap &quot;Add to Home Screen&quot\;.";
         document.getElementById("menu_btn_div").style.display = "none";
-        document.getElementById("ios_header_spacer").style.display = "none";
         var cols = document.getElementsByClassName('navli');
         for(i=0; i<cols.length; i++) {
             cols[i].style.backgroundColor = '#f3f6f6';
@@ -310,15 +340,17 @@ function installToHomescreen() {
         }
         var arrows = document.getElementsByClassName('arrow');
         for(i=0; i<arrows.length; i++) {
-            arrows[i].innerHTML = '<img src="images/ios-forward.png" alt=">" style="width: 24px; height: 21px;" />';
+            arrows[i].innerHTML = '<img src="images/ios-forward.png" width="24" height="21" />';
         }
         //iBug();
     } else {
         document.getElementById("ios_header").style.display = "none";
         document.getElementById("ios_footer").style.display = "none";
         document.getElementById("ios_header_spacer").style.display = "none";
+        document.getElementById("ios_header_spacer_menu").style.display = "none";
         //document.getElementByClassName("ios_footer_spacer").style.display = "none";
     }
+    document.getElementById("loading_screen").style.display = "none";
     //alert(navigator.userAgent);
     //alert("Welcome");
 }
@@ -340,11 +372,12 @@ function riFindIntlMeeting() {
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-3840794-1']);
+    _gaq.push(['_setDomainName','none'])
     _gaq.push(['_trackPageview']);
 
     (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.src = 'ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
@@ -353,7 +386,7 @@ function riFindIntlMeeting() {
 
 <div id="homePage" class="page center">
     <div id="ios_header_spacer"></div>
-    <div style="position: absolute; width: 100%;">
+    <div id="logo_div">
         <div style="display: inline;" id="menu_btn_div">
             <a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/menu.png" class="menu_btn"></a>
         </div>
@@ -362,7 +395,7 @@ function riFindIntlMeeting() {
         </div>
     </div>
 
-    <div>
+    <div id="logo_bg">
         <img src="images/header-bg8.jpg" style="width: 100%;">
     </div>
     <div id="index">
@@ -374,7 +407,7 @@ function riFindIntlMeeting() {
 
         <h1>Spread the Word and Mobile App</h1>
 
-        <p>Android/Amazon users find the Mobile App on <a href="https://play.google.com/store/apps/details?id=com.blazingraptor.recovery" target="_blank">Google Play</a> and <a href="http://www.amazon.com/Brian-Corson-Recovery-International/dp/B00L4NQLSM/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1403287354&sr=1-2&keywords=Recovery+International" target="_blank">Amazon Appstore</a>. iPhone and iPad users, the app will be in the App Store soon under "Recovery International". Until then, you and everyone else can use the Web App. Google "<a href="https://www.google.com/search?q=Recovery+International+Mobile+App" target="_blank">Recovery International Mobile App</a>" and add it to your homescreen. Then encourage your friends to do the same. <span id="install_to_homescreen"></p>
+        <p>Android/Amazon users find the Mobile App on <a href="javascript:window.open('https://play.google.com/store/apps/details?id=com.blazingraptor.recovery','_system','location=yes');">Google Play</a> and <a href="javascript:window.open('http://www.amazon.com/Brian-Corson-Recovery-International/dp/B00L4NQLSM/ref=sr_1_2?s=mobile-apps&ie=UTF8&qid=1403287354&sr=1-2&keywords=Recovery+International','_system','location=yes');">Amazon Appstore</a>. iPhone and iPad users, the app will be in the App Store soon under "Recovery International". Until then, you and everyone else can use the Web App. Simply Google "<a href="javascript:window.open('https://www.google.com/search?q=Recovery+International+Mobile+App','_system','location=yes');">Recovery International Mobile App</a>" and add it to your homescreen. Then encourage your friends to do the same. <span id="install_to_homescreen"></p>
         <div class="ios_footer_spacer"></div>
     </div>
     <div id="tools_and_terms" style="display: none;">
@@ -501,17 +534,7 @@ function riFindIntlMeeting() {
         <div class="ios_footer_spacer"></div>
     </div>
     <div id="find_a_meeting" style="display: none;">
-        <h1>Find a Meeting</h1>
-        <p>This feature will not work in offline mode.</p>
-        <p><a href="#" onclick="riFindIntlMeeting();">Non-US Meetings</a></p>
-        <!--<p><a href="#" onclick="document.getElementById('non_us').style.display = 'block';">Non-US Meetings</a></p>-->
-        <div id="non_us" style="display: none;">
-            <p>Visit Recovery International Canada at <a href="javascript:window.open('http://www.recoverycanada.org', '_system', 'location=yes');">www.recoverycanada.org</a>.</p>
-            <p>Visit Recovery International Ireland at <a href="javascript:window.open('http://www.recovery-inc-ireland.ie', '_system', 'location=yes');">www.recovery-inc-ireland.ie</a>.</p>
-            <p>Or, <a href="javascript:window.open('https://www.lowselfhelpsystems.org/meetings/meetings-per-city.asp?state=other', '_system', 'location=yes');">view other international meetings</a>.</p>
-        </div>
-        <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=true" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 80%">Your browser doesn't support iFrames.</iframe>
-        <div class="ios_footer_spacer"></div>
+        <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=ios" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 100%">Your browser doesn't support iFrames.</iframe>
     </div>
     <div id="phone_meetings" style="display: none;">
         <h1>Phone Meetings</h1>
@@ -519,11 +542,11 @@ function riFindIntlMeeting() {
 
         <p>Important Resources for Telephone Meetings:</p>
         <ul>
-            <li><a href="http://www.lowselfhelpsystems.org/documents/phones_newcomer_read_me_first_doc_rev_6_2013.pdf" target="_blank">READ ME FIRST (PDF)</a></li>
-            <li>Tools and Terms (<a href="javascript:slidePageFrom(page0, 'left');">See the Menu</a>)</li>
-            <li>Example Construction (<a href="javascript:slidePageFrom(page0, 'left')">See the Menu</a>)</li>
-            <li>See the <strong>Up-to-date Telephone Meeting Schedule</strong> on the <a href="http://www.lowselfhelpsystems.org/meetings/phone-meetings.asp" target="_blank">Desktop Website</a></li>
-            <li><a href="https://www.lowselfhelpsystems.org/meetings/meeting-contribution.asp" target="_blank">Make a telephone meeting contribution (Desktop Website)</a></li>
+            <li><a href="javascript:window.open('http://www.lowselfhelpsystems.org/documents/phones_newcomer_read_me_first_doc_rev_6_2013.pdf','_system','location=yes');">READ ME FIRST (PDF)</a></li>
+            <li>Tools and Terms (<a href="javascript:slidePageFromHome(page0, 'left');">See the Menu</a>)</li>
+            <li>Example Construction (<a href="javascript:slidePageFromHome(page0, 'left')">See the Menu</a>)</li>
+            <li>See the <strong>Up-to-date Telephone Meeting Schedule</strong> on the <a href="javascript:window.open('http://www.lowselfhelpsystems.org/meetings/phone-meetings.asp','_system','location=yes');">Desktop Website</a></li>
+            <li><a href="javascript:window.open('https://www.lowselfhelpsystems.org/meetings/meeting-contribution.asp','_system','location=yes');">Make a telephone meeting contribution (Desktop Website)</a></li>
         </ul>
 
         <p>Phone Meeting Details:</p>
@@ -548,7 +571,7 @@ function riFindIntlMeeting() {
     </div>
     <div id="online_meetings" style="display: none;">
         <h1>Online Meetings</h1>
-        <p>The mobile edition module is not available with this account. Currently, chat only works with desktop computers from the <a href="http://www.lowselfhelpsystems.org/meetings/online-meetings.asp" target="_blank">Desktop Website</a>.</p>
+        <p>The mobile edition module is not available with this account. Currently, chat only works with desktop computers from the <a href="javascript:window.open('http://www.lowselfhelpsystems.org/meetings/online-meetings.asp','_system','location=yes');">Desktop Website</a>.</p>
 <script type="text/javascript">/*<![CDATA[*/
     var addonchat = {
         signed:true, server:0, id:423095, width:"510", height:"425", language:"en" }
@@ -584,6 +607,7 @@ Java Now</a>
 </div>
 
 <div id="p0" class="page left" style="background-color: #fff;">
+    <div id="ios_header_spacer_menu"></div>
     <h1>Menu</h1>
     <div class="navcontainer">
     <ul>
@@ -601,10 +625,10 @@ Java Now</a>
     <h1 class="navh1">Website Links</h1>
     <div class="navcontainer">
     <ul>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="http://www.lowselfhelpsystems.org" target="_blank">Desktop Website</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/shop-online.asp" target="_blank">Buy Books and Resources</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/support.asp" target="_blank">Donate Now</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="https://www.lowselfhelpsystems.org/about/membership.asp" target="_blank">Become a Member</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org','_system','location=yes');">Desktop Website</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/shop-online.asp','_system','location=yes');">Buy Books and Resources</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/support.asp','_system','location=yes');">Donate Now</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><a class="nava" href="javascript:window.open('https://www.lowselfhelpsystems.org/about/membership.asp','_system','location=yes');">Become a Member</a></li>
     </ul>
     </div>
     <div class="ios_footer_spacer"></div>
@@ -615,17 +639,21 @@ Java Now</a>
         <a href="javascript:slidePageFromBack(homePage, 'right');"><img src="images/ios-back.png" width="24" height="21"> <span id="ios_back_text">Home</span></a>
     </div>
     <div id="ios_page_title">Home</div>
-    </div>
+</div>
 <div id="ios_footer">
-    <div style="display: table; width: 100%; height: 100%;">
-        <div class="ios_shortcut_left"><div class="menupic"><a href="javascript:toolsAndTerms();">&#8670;</a></div></div>
-        <div class="ios_shortcut_spacer">&nbsp;</div>
-        <div class="ios_shortcut_center">
-            <div id="ios_menu"><a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/ios-menu.png" width="43" height="40"></a></div>
-        </div>
-        <div class="ios_shortcut_spacer">&nbsp;</div>
-        <div class="ios_shortcut_right"><div class="menupic"><a href="javascript:exampleConstruction();">&#9986;</a></div></div>
-    </div>
+    <table style="width: 100%; border: 0;">
+        <tbody>
+            <tr>
+                <td style="width: 43px; height: 40px;"><div class="barmenupic"><a href="javascript:toolsAndTerms();">&#8670;</a></div></td>
+                <td></td>
+                <td style="width: 43px; height: 40px;"><div id="ios_menu"><a href="javascript:slidePageFromHome(page0, 'left');"><img src="images/ios-menu.png" width="43" height="40"></a></td>
+                <td></td>
+                <td style="width: 43px; height: 40px;"><div class="barmenupic"><a href="javascript:exampleConstruction();">&#9986;</a></div></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="loading_screen">
 </div>
 
 <script type="text/javascript">
@@ -635,6 +663,8 @@ page0 = document.getElementById("p0"),
 currentPage = homePage;
 
 function index() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "block";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -649,6 +679,8 @@ function index() {
 }
 
 function toolsAndTerms() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "block";
     document.getElementById("example_construction").style.display = "none";
@@ -665,6 +697,8 @@ function toolsAndTerms() {
 }
 
 function exampleConstruction() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "block";
@@ -681,25 +715,29 @@ function exampleConstruction() {
 }
 
 function findAMeeting() {
-    //if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
-    //    window.open('http://www.blazingraptor.com/recovery/meeting.php?app=ios','_blank','location=yes');
-    //} else {
-    //    window.open('http://www.blazingraptor.com/recovery/meeting.php?app=true','_blank','location=yes');
-    //}
-    document.getElementById("index").style.display = "none";
-    document.getElementById("tools_and_terms").style.display = "none";
-    document.getElementById("example_construction").style.display = "none";
-    document.getElementById("find_a_meeting").style.display = "block";
-    document.getElementById("phone_meetings").style.display = "none";
-    document.getElementById("online_meetings").style.display = "none";
-    document.getElementById("contact_us").style.display = "none";
-    document.getElementById("disclaimer").style.display = "none";
-    slidePageFrom(homePage, 'right');
+    if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
+        document.getElementById("logo_bg").style.display = "none";
+        document.getElementById("logo_div").style.display = "none";
+        document.getElementById("index").style.display = "none";
+        document.getElementById("tools_and_terms").style.display = "none";
+        document.getElementById("example_construction").style.display = "none";
+        document.getElementById("find_a_meeting").style.display = "block";
+        document.getElementById("phone_meetings").style.display = "none";
+        document.getElementById("online_meetings").style.display = "none";
+        document.getElementById("contact_us").style.display = "none";
+        document.getElementById("disclaimer").style.display = "none";
+        slidePageFrom(homePage, 'right');
+        //window.open('http://www.blazingraptor.com/recovery/meeting.php?app=ios','_blank','location=yes');
+    } else {
+        window.open('http://www.blazingraptor.com/recovery/meeting.php?app=yes','_blank','location=yes');
+    }
     document.getElementById("ios_page_title").innerHTML = "Find a Meeting";
     document.getElementById("ios_back_text").innerHTML = "Find a Meeting";
 }
 
 function phoneMeetings() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -714,6 +752,8 @@ function phoneMeetings() {
 }
 
 function onlineMeetings() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -728,6 +768,8 @@ function onlineMeetings() {
 }
 
 function contactUs() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
@@ -742,6 +784,8 @@ function contactUs() {
 }
 
 function disclaimer() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
