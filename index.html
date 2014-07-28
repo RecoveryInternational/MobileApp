@@ -475,6 +475,10 @@ function riFindIntlMeeting() {
         <p><strong>Spotting</strong> - identifying a disturbing feeling, sensation, thought or impulse, previously unseen...then applying the right Recovery tools</p>
         <div class="ios_footer_spacer"></div>
     </div>
+    <div id="notes" style="display: none;">
+        <h1>Notes</h1>
+        <p>This is a test</p>
+    <div>
     <div id="example_construction" style="display: none;">
         <h1>How a Recovery International Example Should be Constructed Outline</h1>
 
@@ -532,6 +536,9 @@ function riFindIntlMeeting() {
 
         <p>Before Recovery I would have felt that I must find out who was right. I would not have realized that I had choices about changing my thoughts and controlling my impulses. Before Recovery I was hospitalized with delusions and clinical depression.</p>
         <div class="ios_footer_spacer"></div>
+    </div>
+    <div id="notes" style="display: none;">
+
     </div>
     <div id="find_a_meeting" style="display: none;">
         <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=ios" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 100%">Your browser doesn't support iFrames.</iframe>
@@ -616,8 +623,9 @@ Java Now</a>
     <ul>
     <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#8630;</div><a class="nava" href="javascript:slidePageFrom(homePage, 'right');">Back</a></li>
     <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#9635;</div><a class="nava" href="javascript:index();">Home</a></li>
-    <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#8670;</div><a class="nava" href="javascript:toolsAndTerms();">Tools and Terms</a></li>
     <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#9986;</div><a class="nava" href="javascript:exampleConstruction();">Example Construction</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#8670;</div><a class="nava" href="javascript:toolsAndTerms();">Tools and Terms</a></li>
+    <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#9733;</div><a class="nava" href="javascript:notes();">Notes</a></li>
     <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#9733;</div><a class="nava" href="javascript:findAMeeting();">Find a Meeting</a></li>
     <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#9742;</div><a class="nava" href="javascript:phoneMeetings();">Phone Meetings</a></li>
 <!--    <li class="navli"><div class="arrow">&#9658;</div><div class="menupic">&#8644;</div><a class="nava" href="javascript:onlineMeetings();">Online Meetings</a></li>-->
@@ -671,6 +679,7 @@ function index() {
     document.getElementById("index").style.display = "block";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
@@ -687,6 +696,7 @@ function toolsAndTerms() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "block";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
@@ -705,6 +715,7 @@ function exampleConstruction() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "block";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
@@ -717,6 +728,25 @@ function exampleConstruction() {
     document.getElementById("ios_back_text").innerHTML = "Example Construction";
 }
 
+function notes() {
+    document.getElementById("logo_bg").style.display = "block";
+    document.getElementById("logo_div").style.display = "block";
+    document.getElementById("index").style.display = "none";
+    document.getElementById("tools_and_terms").style.display = "none";
+    document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "block";
+    document.getElementById("find_a_meeting").style.display = "none";
+    document.getElementById("phone_meetings").style.display = "none";
+    document.getElementById("online_meetings").style.display = "none";
+    document.getElementById("contact_us").style.display = "none";
+    document.getElementById("disclaimer").style.display = "none";
+    if (document.getElementById("ios_menu").style.display == "none") {
+        slidePageFrom(homePage, 'right');
+    }
+    document.getElementById("ios_page_title").innerHTML = "Notes";
+    document.getElementById("ios_back_text").innerHTML = "Notes";
+}
+
 function findAMeeting() {
     if ((navigator.userAgent.indexOf("iPhone") != -1) || (navigator.userAgent.indexOf("iPad") != -1) || (navigator.userAgent.indexOf("Firefox") != -1)) {
         //document.getElementById("logo_bg").style.display = "none";
@@ -724,6 +754,7 @@ function findAMeeting() {
         //document.getElementById("index").style.display = "none";
         //document.getElementById("tools_and_terms").style.display = "none";
         //document.getElementById("example_construction").style.display = "none";
+        //document.getElementById("notes").style.display = "none";
         //document.getElementById("find_a_meeting").style.display = "block";
         //document.getElementById("phone_meetings").style.display = "none";
         //document.getElementById("online_meetings").style.display = "none";
@@ -744,6 +775,7 @@ function phoneMeetings() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "block";
     document.getElementById("online_meetings").style.display = "none";
@@ -760,6 +792,7 @@ function onlineMeetings() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "block";
@@ -776,6 +809,7 @@ function contactUs() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
@@ -792,6 +826,7 @@ function disclaimer() {
     document.getElementById("index").style.display = "none";
     document.getElementById("tools_and_terms").style.display = "none";
     document.getElementById("example_construction").style.display = "none";
+    document.getElementById("notes").style.display = "none";
     document.getElementById("find_a_meeting").style.display = "none";
     document.getElementById("phone_meetings").style.display = "none";
     document.getElementById("online_meetings").style.display = "none";
