@@ -370,11 +370,30 @@ function riFindIntlMeeting() {
     }
 }
 
+var ri_db_output = "";
+
 function populateDB(tx) {
-     tx.executeSql('DROP TABLE IF EXISTS DEMO');
+     //tx.executeSql('DROP TABLE IF EXISTS DEMO');
      tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
      tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
      tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+     //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+}
+
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+}
+
+function querySuccess(tx, results) {
+    // this will be empty since no rows were inserted.
+    //console.log("Insert ID = " + results.insertId);
+    ri_db_output = ri_db_output + "Insert ID = " + results.insertId;
+    // this will be 0 since it is a select statement
+    //console.log("Rows Affected = " + results.rowAffected);
+    ri_db_output = ri_db_output + "Rows Affected = " + results.rowAffected;
+    // the number of rows returned by the select statement
+    //console.log("Insert ID = " + results.rows.length);
+    ri_db_output = ri_db_output + "Insert ID = " + results.rows.length
 }
 
 function errorCB(err) {
@@ -383,6 +402,7 @@ function errorCB(err) {
 
 function successCB() {
     alert("success!");
+    alert(ri_db_output);
 }
 
     var _gaq = _gaq || [];
@@ -761,7 +781,8 @@ function notes() {
     var db = window.openDatabase("recovery-phonegap", "1.0", "Recovery PhoneGap", 1000000);
     //alert(db);
     //var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-    db.transaction(populateDB, errorCB, successCB);
+    //db.transaction(populateDB, errorCB, successCB);
+    db.transaction(queryDB, errorCB);
 }
 
 function findAMeeting() {
