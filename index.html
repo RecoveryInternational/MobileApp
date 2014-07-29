@@ -370,6 +370,21 @@ function riFindIntlMeeting() {
     }
 }
 
+function populateDB(tx) {
+     tx.executeSql('DROP TABLE IF EXISTS DEMO');
+     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+}
+
+function errorCB(err) {
+    alert("Error processing SQL: "+err.code);
+}
+
+function successCB() {
+    alert("success!");
+}
+
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-3840794-1']);
     _gaq.push(['_setDomainName','none'])
@@ -534,8 +549,8 @@ function riFindIntlMeeting() {
         <div class="ios_footer_spacer"></div>
     </div>
     <div id="notes" style="display: none;">
-        <h1>Notes (This is still a little expermental)</h1>
-        <p>Write down your favorite spots, meeting notes or other Recovery related info. <strong>Note: You should backup/copy any important notes to a second location.</strong></p>
+        <h1>Notes</h1>
+        <p>Write down your favorite spots, meeting notes or other Recovery related info.</p>
     </div>
     <div id="find_a_meeting" style="display: none;">
         <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=ios" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 100%">Your browser doesn't support iFrames.</iframe>
@@ -744,7 +759,9 @@ function notes() {
     document.getElementById("ios_back_text").innerHTML = "Notes";
     alert("These notes will be deleted when you upgrade to 1.5.0 and higher (the next version). This will be fixed going forward so either wait to use this feature or backup/copy your notes to a secondary location before upgrading.");
     var db = window.openDatabase("recovery-phonegap", "1.0", "Recovery PhoneGap", 1000000);
-    alert(db);
+    //alert(db);
+    //var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+    db.transaction(populateDB, errorCB, successCB);
 }
 
 function findAMeeting() {
