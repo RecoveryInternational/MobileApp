@@ -386,14 +386,14 @@ function queryDB(tx) {
 
 function querySuccess(tx, results) {
     // this will be empty since no rows were inserted.
-    //console.log("Insert ID = " + results.insertId);
-    ri_db_output = ri_db_output + "Insert ID = " + results.insertId;
+    console.log("Insert ID = " + results.insertId);
+    //ri_db_output = ri_db_output + "Insert ID = " + results.insertId;
     // this will be 0 since it is a select statement
-    //console.log("Rows Affected = " + results.rowAffected);
-    ri_db_output = ri_db_output + "Rows Affected = " + results.rowAffected;
+    console.log("Rows Affected = " + results.rowAffected);
+    //ri_db_output = ri_db_output + "Rows Affected = " + results.rowAffected;
     // the number of rows returned by the select statement
-    //console.log("Insert ID = " + results.rows.length);
-    ri_db_output = ri_db_output + "Insert ID = " + results.rows.length
+    console.log("Insert ID = " + results.rows.length);
+    //ri_db_output = ri_db_output + "Insert ID = " + results.rows.length
 }
 
 function errorCB(err) {
