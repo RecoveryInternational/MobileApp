@@ -381,7 +381,7 @@ function populateDB(tx) {
      //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
 
-function getEntries() {   
+function getEntries(tx) {
     //doLog("get entries");
     alert("getEntries");
     //dbShell.transaction(function(tx) {
@@ -791,7 +791,8 @@ function notes() {
     //var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
     //db.transaction(populateDB, errorCB, successCB);
     //db.transaction(queryDB, errorCB, successCB);
-    getEntries();
+    //getEntries();
+    db.transaction(getEntries, errorCB, successCB);
 }
 
 function findAMeeting() {
