@@ -383,7 +383,7 @@ function renderEntries(tx,results){
         var s = "";
         for(var i=0; i<results.rows.length; i++) {
             //alert(results.rows.item(i).data);
-            //document.getElementById("notes").value = results.rows.item(i).data;
+            document.getElementById("notes_textarea").value = results.rows.item(i).data;
        }
     }
 }
@@ -561,7 +561,7 @@ _gaq.push(['_trackPageview']);
     </div>
     <div id="notes" style="display: none;">
         <h1>Notes</h1>
-        <textarea id="notes" style="width: 100%; height: 100%;">
+        <textarea id="notes_textarea" style="width: 100%; height: 100%;">
     </div>
     <div id="find_a_meeting" style="display: none;">
         <iframe src="http://www.blazingraptor.com/recovery/meeting.php?app=ios" style="border: 0; border-top: solid 1px #000; overflow: scroll; width: 100%; height: 100%">Your browser doesn't support iFrames.</iframe>
