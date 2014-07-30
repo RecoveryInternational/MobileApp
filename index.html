@@ -284,6 +284,7 @@ li {
 }
 </style>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 window.onload = function() {
     //alert("welcome");
@@ -380,20 +381,27 @@ function populateDB(tx) {
      //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
 
-function queryDB(tx) {
-    tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+function getEntries() {
+    
+    //doLog("get entries");
+    //dbShell.transaction(function(tx) {
+    //    tx.executeSql("select id, title, body, updated from notes order by updated desc",[],renderEntries,dbErrorHandler);
+    //}, dbErrorHandler);
+    alert("getEntries");
 }
 
-function querySuccess(tx, results) {
-    // this will be empty since no rows were inserted.
-    console.log("Insert ID = " + results.insertId);
-    //ri_db_output = ri_db_output + "Insert ID = " + results.insertId;
-    // this will be 0 since it is a select statement
-    console.log("Rows Affected = " + results.rowAffected);
-    //ri_db_output = ri_db_output + "Rows Affected = " + results.rowAffected;
-    // the number of rows returned by the select statement
-    console.log("Insert ID = " + results.rows.length);
-    //ri_db_output = ri_db_output + "Insert ID = " + results.rows.length
+function renderEntries(tx,results){
+    //doLog("render entries");
+    if (results.rows.length == 0) {
+        $("#mainContent").html("<p>You currently do not have any notes.</p>");
+    } else {
+       var s = "";
+       for(var i=0; i<results.rows.length; i++) {
+         s += "<li><a href='edit.html?id="+results.rows.item(i).id + "'>" + results.rows.item(i).title + "</a></li>";   
+       }
+       $("#noteTitleList").html(s);
+       $("#noteTitleList").listview("refresh");
+    }
 }
 
 function errorCB(err) {
@@ -402,7 +410,6 @@ function errorCB(err) {
 
 function successCB() {
     alert("success!");
-    alert(ri_db_output);
 }
 
     var _gaq = _gaq || [];
@@ -782,7 +789,8 @@ function notes() {
     //alert(db);
     //var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
     //db.transaction(populateDB, errorCB, successCB);
-    db.transaction(queryDB, errorCB);
+    //db.transaction(queryDB, errorCB, successCB);
+    getEntries();
 }
 
 function findAMeeting() {
