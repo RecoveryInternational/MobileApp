@@ -363,45 +363,28 @@ function riEmailProtectorReturn(ratsign, rdomain, rdotcom, rname) {
     }
 }
 
-function riFindIntlMeeting() {
-    if (document.getElementById('non_us').style.display == 'block') {
-        document.getElementById('non_us').style.display = 'none';
-    } else {
-        document.getElementById('non_us').style.display = 'block';
-    }
-}
-
 var ri_db_output = "";
 
 function populateDB(tx) {
-     //tx.executeSql('DROP TABLE IF EXISTS DEMO');
-     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
-     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-     //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+     //tx.executeSql('DROP TABLE IF EXISTS notes');
+     tx.executeSql('CREATE TABLE IF NOT EXISTS notes (id unique, data)');
 }
 
 function getEntries(tx) {
     //doLog("get entries");
-    alert("getEntries");
-    //dbShell.transaction(function(tx) {
-        tx.executeSql("select id, data from demo order by id desc",[],renderEntries,errorCB);
-    //}, errorCB);
-    alert("getEntries");
+    tx.executeSql("SELECT id, data FROM notes ORDER BY id desc",[],renderEntries,errorCB);
 }
 
 function renderEntries(tx,results){
     //doLog("render entries");
     if (results.rows.length == 0) {
-        $("#mainContent").html("<p>You currently do not have any notes.</p>");
+        tx.executeSql('INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
     } else {
-       var s = "";
-       for(var i=0; i<results.rows.length; i++) {
-         alert(results.rows.item(i).id);
-         //s += "<li><a href='edit.html?id="+results.rows.item(i).id + "'>" + results.rows.item(i).title + "</a></li>";   
+        var s = "";
+        for(var i=0; i<results.rows.length; i++) {
+            //alert(results.rows.item(i).id);
+            alert(results.rows.item(i).title);
        }
-       //$("#noteTitleList").html(s);
-       //$("#noteTitleList").listview("refresh");
     }
 }
 
@@ -413,16 +396,16 @@ function successCB() {
     alert("success!");
 }
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-3840794-1']);
-    _gaq.push(['_setDomainName','none'])
-    _gaq.push(['_trackPageview']);
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3840794-1']);
+_gaq.push(['_setDomainName','none'])
+_gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = 'ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
 </head>
 <body>
