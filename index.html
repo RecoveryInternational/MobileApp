@@ -384,9 +384,9 @@ function populateDB(tx) {
 function getEntries() {   
     //doLog("get entries");
     alert("getEntries");
-    dbShell.transaction(function(tx) {
+    //dbShell.transaction(function(tx) {
         tx.executeSql("select id, data from demo order by id desc",[],renderEntries,errorCB);
-    }, errorCB);
+    //}, errorCB);
     alert("getEntries");
 }
 
