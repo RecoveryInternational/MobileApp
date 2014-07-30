@@ -772,9 +772,8 @@ function notes() {
     var db = window.openDatabase("recovery-phonegap", "1.0", "Recovery PhoneGap", 1000000);
     //alert(db);
     //var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-    //db.transaction(populateDB, errorCB, successCB);
+    db.transaction(populateDB, errorCB, successCB);
     //db.transaction(queryDB, errorCB, successCB);
-    //getEntries();
     db.transaction(getEntries, errorCB, successCB);
 }
 
