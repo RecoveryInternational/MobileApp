@@ -388,6 +388,11 @@ function renderEntries(tx,results){
     }
 }
 
+function saveNote() {
+    //Sometimes you may want to jot down something quickly....
+    tx.executeSql('UPDATE notes set id=1, data=' + document.getElementById("notes_textarea").value);
+}
+
 function errorCB(err) {
     alert("Error processing SQL: "+err.code);
 }
@@ -561,6 +566,7 @@ _gaq.push(['_trackPageview']);
     </div>
     <div id="notes" style="display: none; height: 100%;">
         <h1>Notes</h1>
+        <input id="notes_save" type="button" value="Save" onclick="saveNote()" />
         <textarea id="notes_textarea" style="width: 100%; height: 100%;"></textarea>
     </div>
     <div id="find_a_meeting" style="display: none;">
