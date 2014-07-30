@@ -381,12 +381,11 @@ function populateDB(tx) {
      //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
 }
 
-function getEntries() {
-    
+function getEntries() {   
     //doLog("get entries");
-    //dbShell.transaction(function(tx) {
-    //    tx.executeSql("select id, title, body, updated from notes order by updated desc",[],renderEntries,dbErrorHandler);
-    //}, dbErrorHandler);
+    dbShell.transaction(function(tx) {
+        tx.executeSql("select id, data from demo order by id desc",[],renderEntries,errorCB);
+    }, errorCB);
     alert("getEntries");
 }
 
@@ -397,10 +396,11 @@ function renderEntries(tx,results){
     } else {
        var s = "";
        for(var i=0; i<results.rows.length; i++) {
-         s += "<li><a href='edit.html?id="+results.rows.item(i).id + "'>" + results.rows.item(i).title + "</a></li>";   
+         alert(results.rows.item(i).id);
+         //s += "<li><a href='edit.html?id="+results.rows.item(i).id + "'>" + results.rows.item(i).title + "</a></li>";   
        }
-       $("#noteTitleList").html(s);
-       $("#noteTitleList").listview("refresh");
+       //$("#noteTitleList").html(s);
+       //$("#noteTitleList").listview("refresh");
     }
 }
 
