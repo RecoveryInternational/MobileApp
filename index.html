@@ -368,7 +368,7 @@ var ri_db_output = "";
 function populateDB(tx) {
     //tx.executeSql('DROP TABLE IF EXISTS notes');
     tx.executeSql('CREATE TABLE IF NOT EXISTS notes (id unique, data)');
-    tx.executeSql('INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
+    //tx.executeSql('INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
     //tx.executeSql('IF NOT EXISTS (SELECT * FROM notes) INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
 }
 
@@ -380,7 +380,7 @@ function getEntries(tx) {
 function renderEntries(tx,results){
     //doLog("render entries");
     if (results.rows.length == 0) {
-        //tx.executeSql('INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
+        tx.executeSql('INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
     } else {
         var s = "";
         for(var i=0; i<results.rows.length; i++) {
