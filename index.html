@@ -368,7 +368,7 @@ var ri_db_output = "";
 function populateDB(tx) {
     //tx.executeSql('DROP TABLE IF EXISTS notes');
     tx.executeSql('CREATE TABLE IF NOT EXISTS notes (id unique, data)');
-    tx.executeSql('IF NOT EXISTS (SELECT * FROM notes WHERE id = "1") INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
+    tx.executeSql('IF NOT EXISTS (SELECT * FROM notes) INSERT INTO notes (id, data) VALUES (1, "Write down your favorite spots, meeting notes or other Recovery related info.")');
 }
 
 function getEntries(tx) {
