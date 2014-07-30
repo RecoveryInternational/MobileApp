@@ -390,7 +390,9 @@ function renderEntries(tx,results){
 
 function saveNote() {
     //Sometimes you may want to jot down something quickly....
-    tx.executeSql('UPDATE notes set id=1, data=' + document.getElementById("notes_textarea").value);
+    alert("before");
+    tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
+    alert("after");
 }
 
 function errorCB(err) {
