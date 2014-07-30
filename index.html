@@ -383,15 +383,16 @@ function renderEntries(tx,results){
         var s = "";
         for(var i=0; i<results.rows.length; i++) {
             //alert(results.rows.item(i).data);
-            document.getElementById("notes_textarea").value = results.rows.item(i).data;
+            //document.getElementById("notes_textarea").value = results.rows.item(i).data;
        }
     }
 }
 
-function saveNote() {
+function saveNote(note, cb) {
     //Sometimes you may want to jot down something quickly....
     alert("before");
-    tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
+    //tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
+    tx.executeSql("UPDATE notes set id=?, data=?",[note.id,note.data]);
     alert("after");
 }
 
