@@ -383,16 +383,32 @@ function renderEntries(tx,results){
         var s = "";
         for(var i=0; i<results.rows.length; i++) {
             //alert(results.rows.item(i).data);
-            //document.getElementById("notes_textarea").value = results.rows.item(i).data;
+            document.getElementById("notes_textarea").value = results.rows.item(i).data;
        }
     }
+}
+
+function prepNote(tx) {
+    var data = {title:$("#noteTitle").val(), 
+                body:$("#noteBody").val(),
+                id:$("#noteId").val()
+    };
+    saveNote(data,function() {
+        $.mobile.changePage("index.html",{reverse:true});
+    });
 }
 
 function saveNote(note, cb) {
     //Sometimes you may want to jot down something quickly....
     alert("before");
-    //tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
-    tx.executeSql("UPDATE notes set id=?, data=?",[note.id,note.data]);
+  //tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
+  //tx.executeSql("update notes set title=?, body=?, updated=? where id=?",[note.title,note.body, new Date(), note.id]);
+  //tx.executeSql("UPDATE notes SET id=?, data=? WHERE id=?",[note.id,note.data]);
+    tx.executeSql('UPDATE notes SET data=’Bhumi Shah’ WHERE id = 1', [],  successCB, errorCB);
+
+
+
+
     alert("after");
 }
 
