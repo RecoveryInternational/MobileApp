@@ -404,7 +404,7 @@ function saveNote(note, cb) {
   //tx.executeSql('UPDATE notes set id=1, data="' + document.getElementById("notes_textarea").value + '"');
   //tx.executeSql("update notes set title=?, body=?, updated=? where id=?",[note.title,note.body, new Date(), note.id]);
   //tx.executeSql("UPDATE notes SET id=?, data=? WHERE id=?",[note.id,note.data]);
-    tx.executeSql('UPDATE notes SET data=’Bhumi Shah’ WHERE id = 1', [],  successCB, errorCB);
+    tx.executeSql('UPDATE notes SET data=’Bhumi Shah’ WHERE id = 1', []);
 
 
 
